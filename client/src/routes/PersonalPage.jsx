@@ -78,7 +78,7 @@ export default function PersonalPage(props) {
         <Col sm={4} md={3}>
           <Avatar src={user.avatarBase64} user={user} />
         </Col>
-        <Col sm={8} md={7}>
+        <Col>
           <UserInfo user={user} />
           <PostContainer
             user={user}

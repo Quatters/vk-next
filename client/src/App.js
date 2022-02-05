@@ -18,6 +18,7 @@ import CurrentUserContext from './static/js/CurrentUserContext';
 import NotificationContext from './static/js/NotificationContext';
 import Notification from './components/Notification';
 import Home from './routes/Home';
+import Messenger from './routes/Messenger';
 
 require('dotenv').config();
 
@@ -107,7 +108,7 @@ function App() {
             />
           </ToastContainer>
           <Header />
-          <Container className='mt-4'>
+          <Container fluid='lg' className='mt-4'>
             <Row>
               <Sidebar />
               <Switch>
@@ -117,6 +118,8 @@ function App() {
                 <Route exact path='/users/:login' component={PersonalPage} />
 
                 <Route exact path='/users' component={Users} />
+
+                <Route exact path='/messenger' component={Messenger} />
 
                 <Route exact path='/signin' component={SignIn} />
                 <Route exact path='/signup' component={SignUp} />

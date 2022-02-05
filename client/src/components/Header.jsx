@@ -22,7 +22,7 @@ export default function Header() {
   return (
     <div>
       <Navbar bg='light' expand='md'>
-        <Container>
+        <Container fluid='lg'>
           <Navbar.Brand className='ms-3'>VK Next</Navbar.Brand>
           <Navbar.Toggle aria-controls='navbarScroll' />
           <Navbar.Collapse className='pt-md-0 pt-2'>

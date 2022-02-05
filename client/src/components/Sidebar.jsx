@@ -1,4 +1,4 @@
-import { React, useContext } from 'react';
+import { Fragment, React, useContext } from 'react';
 import { Col, Nav } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import ConfirmModal from './ConfirmModal';
@@ -18,11 +18,16 @@ export default function Sidebar() {
   }
 
   return (
-    <Col sm={3} md={2} className='hide-on-sm'>
+    <div style={{ width: 'auto' }} sm={3} md={2} className='hide-on-sm'>
       <Nav className='flex-column' variant=''>
         <Nav.Item>
           <LinkContainer to='/me'>
             <Nav.Link>My page</Nav.Link>
+          </LinkContainer>
+        </Nav.Item>
+        <Nav.Item>
+          <LinkContainer to='/messenger'>
+            <Nav.Link>Messenger</Nav.Link>
           </LinkContainer>
         </Nav.Item>
         <Nav.Item>
@@ -55,6 +60,6 @@ export default function Sidebar() {
           </Nav.Item>
         )}
       </Nav>
-    </Col>
+    </div>
   );
 }

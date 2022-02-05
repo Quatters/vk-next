@@ -1,0 +1,134 @@
+.messenger {
+  display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  min-height: 84vh;
+  overflow: hidden; /* не помешает ли переполнению в .chat? */
+}
+
+.messenger .status-bar {
+  height: 38px;
+  padding: 0 16px;
+  border-bottom: var(--border);
+  display: flex;
+  align-items: center;
+}
+
+.messenger .users {
+  overflow: auto;
+  border-right: 1px solid rgba(0, 0, 0, 0.125);
+  min-width: 16rem;
+}
+
+.messenger .chat .user {
+  cursor: pointer;
+  color: var(--link-color);
+}
+
+.messenger .search {
+  border-bottom: var(--border);
+  height: 38px;
+}
+
+.messenger .search input {
+  width: 100%;
+  height: 100%;
+  padding: 0 16px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.messenger .search input:focus {
+  outline: none;
+  border: none;
+}
+
+.messenger .chat {
+  border-left: 1px solid var(--separator-color);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.messenger .messages-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  overflow: auto;
+}
+
+.messenger .user-wrapper {
+  height: 63px;
+  display: flex;
+  align-items: center;
+  border-bottom: var(--border);
+  cursor: pointer;
+}
+
+.messenger .user-wrapper:hover {
+  background-color: var(--select-color);
+}
+
+.messenger .active,
+.messenger .active:hover {
+  background-color: var(--active-color);
+  color: white;
+}
+
+.messenger .user-thumbnail {
+  height: 44px;
+  width: 44px;
+  background-color: rgb(202, 202, 202);
+  border-radius: 50%;
+  margin: 0 16px 0 16px;
+}
+
+.messenger .user-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  justify-content: center;
+}
+
+.messenger .user-name,
+.messenger .last-message {
+  width: 100%;
+}
+
+.messenger .message-wrapper {
+  margin: 16px;
+  display: flex;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.messenger .message {
+  background-color: var(--bg-additional-color);
+  padding: 10px 14px;
+  word-break: break-word;
+  min-width: 20%;
+  border-radius: 10px;
+}
+
+.messenger .input-wrapper > textarea {
+  /* background: gray; */
+  outline: none;
+  border: none;
+  width: 100%;
+  height: auto;
+  max-height: 190px;
+  resize: none;
+}
+
+.messenger .input-wrapper {
+  padding: 10px 18px;
+  display: flex;
+  margin-top: auto;
+  border-top: var(--border);
+}
+
+.messenger .send-button {
+  cursor: pointer;
+  margin-bottom: 8px;
+}

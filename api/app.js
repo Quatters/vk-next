@@ -1,20 +1,24 @@
 const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
+const dbConnection = require('./data/db.config');
+const dotenv = require('dotenv');
 
 const app = express();
 
 const host = 'localhost';
 const port = 3001;
-require('dotenv').config();
+dotenv.config();
 
 /* --- Database --- */
 
-const connection = require('./config/db.config');
-connection.once('open', () =>
+dbConnection.once('open', () =>
   console.log('Database connected successfully.\n')
 );
-connection.on('error', () => console.log('Database connection error.\n'));
+dbConnection.on('error', () => console.log('Database connection error.\n'));
+dbConnection.on('close', () =>
+  console.log('Database connection has been closed.')
+);
 
 /* --- Middleware --- */
 
@@ -45,3 +49,5 @@ app.use('/', require('./routes/get-client.js'));
 app.listen(port, host, () => {
   console.log(`Server listens http://${host}:${port}`);
 });
+
+module.exports = app;

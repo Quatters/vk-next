@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "dev": "nodemon app.js",
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "mocha --timeout 10000"
   },
   "keywords": [],
   "author": "Quatters",
@@ -20,6 +21,9 @@
     "mongoose": "^6.0.14"
   },
   "devDependencies": {
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "mocha": "^9.2.0",
     "nodemon": "^2.0.15"
   }
 }

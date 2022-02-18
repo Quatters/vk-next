@@ -29,6 +29,9 @@ export default function Header() {
             <Link to='/me' className='nav-link show-on-sm'>
               My page
             </Link>
+            <Link to='/messenger' className='nav-link show-on-sm'>
+              Messenger
+            </Link>
             <Link to='/users' className='nav-link show-on-sm'>
               Users
             </Link>

@@ -1,0 +1,19 @@
+{
+  "name": "vk-next",
+  "version": "1.0.0",
+  "description": "VK Next is an attempt to build a social network website like [vk.com](https://vk.com).",
+  "scripts": {
+    "postinstall": "npm i --prefix api && npm i --prefix client && npm run build --prefix client",
+    "start": "npm start --prefix api"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Quatters/vk-next.git"
+  },
+  "author": "Quatters",
+  "license": "GPLv3",
+  "bugs": {
+    "url": "https://github.com/Quatters/vk-next/issues"
+  },
+  "homepage": "https://github.com/Quatters/vk-next#readme"
+}

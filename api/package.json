@@ -1,16 +1,13 @@
 {
   "name": "vk-next-api",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
+  "private": "true",
   "scripts": {
     "dev": "nodemon app.js",
     "start": "node app.js",
     "test": "mocha --timeout 5000"
   },
-  "keywords": [],
-  "author": "Quatters",
-  "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "cookie-parser": "^1.4.6",

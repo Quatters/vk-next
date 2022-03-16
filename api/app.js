@@ -6,7 +6,6 @@ const dotenv = require('dotenv');
 
 const app = express();
 
-const host = 'localhost';
 const port = process.env.PORT || 3001;
 dotenv.config();
 
@@ -46,8 +45,8 @@ app.use('/', require('./routes/get-client.js'));
 
 /* --- Starting point --- */
 
-app.listen(port, host, () => {
-  console.log(`Server listens http://${host}:${port}`);
+app.listen(port, () => {
+  console.log(`Server listens port ${port}`);
 });
 
 module.exports = app;

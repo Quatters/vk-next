@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "description": "VK Next is an attempt to build a social network website like [vk.com](https://vk.com).",
   "scripts": {
-    "postinstall": "npm i --prefix api && npm i --prefix client && npm run build --prefix client",
-    "start": "npm start --prefix api"
+    "postinstall": "npm i --prefix api && npm i --prefix client",
+    "build": "npm run build --prefix client",
+    "start": "npm start --prefix api",
+    "dev": "npm run dev --prefix api && npm start --prefix client"
+  },
+  "engines": {
+    "node": "16.13.x"
   },
   "repository": {
     "type": "git",

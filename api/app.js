@@ -7,7 +7,7 @@ const dotenv = require('dotenv');
 const app = express();
 
 const host = 'localhost';
-const port = 3001;
+const port = process.env.PORT || 3001;
 dotenv.config();
 
 /* --- Database --- */

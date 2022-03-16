@@ -1,0 +1,1 @@
+web: REACT_APP_API_URL="https://vk-next.herokuapp.com" npm run postinstall && npm start

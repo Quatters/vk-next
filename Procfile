@@ -1,1 +1,1 @@
-web: npm run postinstall && REACT_APP_API_URL="https://vk-next.herokuapp.com" npm run build && --bind :$PORT npm start
+web: npm run postinstall && REACT_APP_API_URL="https://vk-next.herokuapp.com" npm run build && npm start

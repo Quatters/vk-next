@@ -26,9 +26,9 @@ export default function Sidebar() {
           </LinkContainer>
         </Nav.Item>
         <Nav.Item>
-          <LinkContainer to='/messenger'>
+          {/* <LinkContainer to='/messenger'>
             <Nav.Link>Messenger</Nav.Link>
-          </LinkContainer>
+          </LinkContainer> */}
         </Nav.Item>
         <Nav.Item>
           <LinkContainer to='/users'>

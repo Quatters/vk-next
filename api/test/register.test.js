@@ -15,7 +15,7 @@ describe('Register', () => {
   describe('POST /register', () => {
     it('creates new user', done => {
       const user = {
-        login: 'Test User',
+        login: 'Test-User',
         password: 'Test Password',
         name: 'Test Name',
         surname: 'Test Surname',
@@ -24,21 +24,21 @@ describe('Register', () => {
         .request(server)
         .post('/api/register')
         .send(user)
-        .end(async (error, response) => {
-          assert.strictEqual(response.status, 201);
+        .end(async (err, res) => {
+          assert.strictEqual(res.status, 201);
 
-          const createdUser = await User.findOne({ login: 'Test User' });
+          const createdUser = await User.findOne({ login: 'Test-User' });
           assert.strictEqual(user.login, createdUser.login);
-          assert.strictEqual('test user', createdUser.normalizedLogin);
+          assert.strictEqual('test-user', createdUser.normalizedLogin);
           assert.strictEqual(user.name, createdUser.name);
           assert.strictEqual(user.surname, createdUser.surname);
+          done();
         });
-      done();
     });
 
     it('avoids creating user with non-unique login (case insensitive)', done => {
       const user = {
-        login: 'TEST user',
+        login: 'TEST-user',
         password: 'not important',
         name: 'not important',
         surname: 'not important',
@@ -47,13 +47,15 @@ describe('Register', () => {
         .request(server)
         .post('/api/register')
         .send(user)
-        .end(async (error, response) => {
-          assert.strictEqual(response.status, 400);
+        .end(async (err, res) => {
+          assert.strictEqual(res.status, 400);
 
-          const duplicateUsers = await User.find({ login: 'Test User' });
+          const duplicateUsers = await User.find({
+            normalizedLogin: 'test-user',
+          });
           assert.strictEqual(duplicateUsers.length, 1);
+          done();
         });
-      done();
     });
   });
 });

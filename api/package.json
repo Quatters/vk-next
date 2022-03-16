@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon app.js",
     "start": "node app.js",
-    "test": "mocha --timeout 10000"
+    "test": "mocha --timeout 5000"
   },
   "keywords": [],
   "author": "Quatters",
